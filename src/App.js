@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from 'react'
+import { Switch,Route,Link, Routes } from 'react-router-dom';
+import { Layout,Typography,Space } from 'antd';
+import { Navbar ,Exchanges,Homepage,Cryptocurrencies,Cryptodetails,News} from './components'
+import './App.css'
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+        <div className='navbar'>
+            <Navbar/>
+        </div>
+        <div className='main'>
+            <Layout>
+              <div className='routes'>
+                
+                  <Routes>
+                      
+                      <Route path="/" element={<Homepage />} />
+                      <Route path='/Exchanges' element={<Exchanges />} />
+                      <Route path='/Cryptocurrencies' element={<Cryptocurrencies />} />
+                      <Route path='/Crypto/:coinId' element={<Cryptodetails />} />
+                      <Route path='/News' element={<News />} />
+
+                  </Routes>
+                    
+                  
+              </div>
+            </Layout>
+        
+          <div className='footer'>
+            <Typography.Title level={5} style={{color:'white',textAlign:'center'}}>
+              Cryptoverse<br />
+              all rights reserved
+            </Typography.Title>
+            <Space>
+                <Link to="/">Home</Link>
+                <Link to="/Exchanges">Exchanges</Link>
+                <Link to="/News">News</Link>
+            </Space>
+          </div>
+        </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# 📰 Crypto News App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern and responsive cryptocurrency news application built using **React**, **Redux Toolkit Query**, and **RapidAPI News API**.  
+The app provides real-time crypto headlines with clean UI, animations, and dynamic crypto thumbnails.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+### ✅ Live Crypto News (Updated Daily)
+Fetches latest crypto-related headlines using **RapidAPI (news-api14)**.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### ✅ Home Page – Top 10 News
+Shows a clean preview of the 10 most recent articles.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### ✅ News Page – 100 Articles
+Displays full news feed with thumbnails, timestamps, and hover effects.
 
-### `npm test`
+### ✅ Random Crypto Thumbnails
+Each news card displays a randomly selected cryptocurrency icon.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### ✅ Hover Animations
+- Card lifting effect  
+- Image zoom-in animation  
+- Smooth shadow + fade
 
-### `npm run build`
+### ✅ Accurate Timestamps
+Formatted using **Moment.js**:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`02 Feb 2025, 11:35 AM`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### ✅ Fully Responsive Grid
+Uses Ant Design’s **Row / Col / Card** components for auto-responsive layout.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🛠️ Tech Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+| Technology | Purpose |
+|-----------|---------|
+| React | UI Framework |
+| Redux Toolkit Query | API State Management |
+| Ant Design | UI Components |
+| Moment.js | Date & Time Formatting |
+| RapidAPI News (news-api14) | News Data |
+| CryptoIcon Pack (GitHub) | Thumbnail Images |
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📦 Installation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+git clone https://github.com/Ankitpandey860/crypto-news-app.git
+cd crypto-news-app
+npm install
+npm start
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

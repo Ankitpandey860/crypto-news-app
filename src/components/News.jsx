@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Row, Card, Typography } from "antd";
 import moment from "moment";
 import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
+import Loader from "./Loader";
 
 const { Title, Text } = Typography;
 
@@ -21,7 +22,7 @@ const News = ({ simplified }) => {
     newsCategory: "crypto",
   });
 
-  if (isFetching) return <h2 style={{ marginLeft: "250px" }}>Loading News...</h2>;
+  if (isFetching) return <Loader />;
 
   const newsList = data?.data?.slice(0, count) || [];
 

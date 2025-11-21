@@ -3,6 +3,7 @@ import { Switch,Route,Link, Routes } from 'react-router-dom';
 import { Layout,Typography,Space } from 'antd';
 import { Navbar ,Exchanges,Homepage,Cryptocurrencies,Cryptodetails,News} from './components'
 import './App.css'
+
 const App = () => {
   return (
     <div className='App'>
@@ -19,7 +20,7 @@ const App = () => {
                       <Route path='/Exchanges' element={<Exchanges />} />
                       <Route path='/Cryptocurrencies' element={<Cryptocurrencies />} />
                      <Route path="/crypto/:coinId" element={<Cryptodetails />} />
-
+                      
                       <Route path='/News' element={<News />} />
 
                   </Routes>

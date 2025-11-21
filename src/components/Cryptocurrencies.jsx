@@ -1,30 +1,33 @@
-import React, { useState, useEffect } from 'react';
-import millify from 'millify';
-import { Link } from 'react-router-dom';
-import { Card, Row, Col, Input } from 'antd';
-import { useGetCryptosQuery } from '../services/CryptoApi';
-import Loader from './Loader';
+import React, { useState, useEffect } from "react";
+import millify from "millify";
+import { Link } from "react-router-dom";
+import { Card, Row, Col, Input } from "antd";
+import { useGetCryptosQuery } from "../services/CryptoApi";
+import Loader from "./Loader";
 
 const Cryptocurrencies = ({ simplified }) => {
   const count = simplified ? 10 : 100;
   const { data: cryptosList, isFetching } = useGetCryptosQuery(count);
+
   const [cryptos, setCryptos] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [SearchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    const filteredData = cryptosList?.data?.coins.filter((coin) =>
-      coin.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setCryptos(filteredData);
-  }, [cryptosList, searchTerm]);
+    // 🔥 FIX: Only filter when coins exist
+    if (cryptosList?.data?.coins) {
+      const filteredData = cryptosList.data.coins.filter((coin) =>
+        coin.name.toLowerCase().includes(SearchTerm.toLowerCase())
+      );
+      setCryptos(filteredData);
+    }
+  }, [cryptosList, SearchTerm]);
 
   if (isFetching) return <Loader />;
 
   return (
     <>
-      {/* SEARCH BAR (Only full page me) */}
       {!simplified && (
-        <div style={{ marginLeft: "260px", marginBottom: "20px" }}>
+        <div style={{ marginLeft: "240px" }}>
           <Input
             placeholder="Search Cryptocurrency"
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -32,13 +35,7 @@ const Cryptocurrencies = ({ simplified }) => {
         </div>
       )}
 
-      {/* WRAPPER FOR RIGHT SHIFT */}
-      <div
-        style={{
-          marginLeft: simplified ? "200px" : "200px",
-          paddingRight: "30px",
-        }}
-      >
+      <div style={simplified ? { marginLeft: "260px" } : { marginLeft: "240px" }}>
         <Row gutter={[32, 32]} className="crypto-card-container">
           {cryptos?.map((currency) => (
             <Col xs={24} sm={12} lg={6} className="crypto-card" key={currency.uuid}>
